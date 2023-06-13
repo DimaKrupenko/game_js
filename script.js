@@ -13,5 +13,5 @@ function animate() {
   requestAnimationFrame(animate);
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  player.draw();
+  player.update();
 }
