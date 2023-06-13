@@ -18,7 +18,7 @@ body {
   flex-shrink: 0;
   width: 100%;
   max-width: 1200px;
-  background: url('./img/left2.jpg') repeat-y;
+  background: url('./img/bg-left.png') repeat-y;
 }
 
 .center-bg,
@@ -30,7 +30,7 @@ body {
   .right-bg {
     display: block;
     flex-grow: 1;
-    background: url('./img/right-bg.jpeg') repeat-y;
+    background: url('./img/bg-right.png') repeat-y;
   }
 }
 
@@ -43,6 +43,6 @@ body {
   .center-bg {
     display: block;
     flex-grow: 1;
-    background: url('./img/center-bg.jpeg') repeat;
+    background: url('./img/bg-center.png') repeat;
   }
 }
