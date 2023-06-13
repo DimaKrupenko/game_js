@@ -11,6 +11,7 @@ animate();
 
 function animate() {
   requestAnimationFrame(animate);
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
-  player.drawImg();
+  player.draw();
 }
