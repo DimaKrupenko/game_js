@@ -42,6 +42,17 @@ function animate() {
   requestAnimationFrame(animate);
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  projectile = projectile.filter(projectileInsideWindow);
+
   projectile.forEach(projectile => projectile.update());
   player.update();
+}
+
+function projectileInsideWindow(projectile) {
+  return (
+    projectile.x + projectile.radius > 0 &&
+    projectile.x - projectile.radius < canvas.width &&
+    projectile.y + projectile.radius > 0 &&
+    projectile.y - projectile.radius < canvas.height
+  );
 }
