@@ -1,4 +1,5 @@
 import { Player } from './player.js';
+import { Projectile } from './projectile.js';
 
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
@@ -41,5 +42,6 @@ function animate() {
   requestAnimationFrame(animate);
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  projectile.forEach(projectile => projectile.update());
   player.update();
 }
