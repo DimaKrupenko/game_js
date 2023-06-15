@@ -1,4 +1,5 @@
 import { cosBetweenTwoPoints, sinBetweenTwoPoints } from './utilities.js';
+import { Particle } from './particle.js';
 
 export class Enemy {
   constructor(canvasWidth, canvasHeight, context, player) {
@@ -66,7 +67,7 @@ export class Enemy {
 
   createExplosion(particles) {
     for (let i = 0; i < 50; i++) {
-      particles.push(new particles(this.x, this.y, this.context));
+      particles.push(new Particle(this.x, this.y, this.context));
     }
   }
 }
