@@ -60,7 +60,7 @@ function spawnEnemies() {
 }
 
 function spawnCountEnemies(count) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < count; i++) {
     enemies.push(new Enemy(canvas.width, canvas.height, context, player));
   }
 }
