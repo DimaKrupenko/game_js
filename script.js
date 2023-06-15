@@ -9,11 +9,13 @@ canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
 const wastedElement = document.querySelector('.wasted');
+const scoreElement = document.querySelector('#score');
 
 let player;
 let projectile = [];
 let enemies = [];
 let particles = [];
+let score = 0;
 let animationId;
 let spawnIntervalId;
 let countIntervalId;
@@ -120,6 +122,7 @@ function checkHittingEnemy(enemy) {
     enemy.health--;
 
     if (enemy.health < 1) {
+      increaseScore();
       enemy.createExplosion(particles);
     }
 
@@ -129,4 +132,9 @@ function checkHittingEnemy(enemy) {
 
 function removeProjectileByIndex(index) {
   projectile.splice(index, 1);
+}
+
+function increaseScore() {
+  score += 250;
+  scoreElement.innerHTML = score;
 }
