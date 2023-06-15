@@ -15,6 +15,8 @@ let projectile = [];
 let enemies = [];
 let particles = [];
 let animationId;
+let spawnIntervalId;
+let countIntervalId;
 
 startGame();
 
@@ -47,7 +49,20 @@ function createProjectile(e) {
 }
 
 function spawnEnemies() {
-  enemies.push(new Enemy(canvas.width, canvas.height, context, player));
+  let countSpawnEnemies = 1;
+
+  countIntervalId = setInterval(() => countSpawnEnemies++, 3000);
+  spawnIntervalId = setInterval(
+    () => spawnCountEnemies(countSpawnEnemies),
+    1000
+  );
+  spawnCountEnemies(countSpawnEnemies);
+}
+
+function spawnCountEnemies(count) {
+  for (let i = 0; i < array.length; i++) {
+    enemies.push(new Enemy(canvas.width, canvas.height, context, player));
+  }
 }
 
 function animate() {
@@ -61,6 +76,8 @@ function animate() {
   const isGameOver = enemies.some(checkHittingPlayer);
   if (isGameOver) {
     wastedElement.style.display = 'block';
+    clearInterval(countIntervalId);
+    clearInterval(spawnIntervalId);
     cancelAnimationFrame(animationId);
   }
 
