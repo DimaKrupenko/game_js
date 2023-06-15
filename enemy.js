@@ -6,6 +6,7 @@ export class Enemy {
     this.player = player;
 
     this.radius = 15;
+    this.health = 1;
 
     if (Math.random() < 0.5) {
       this.x =
