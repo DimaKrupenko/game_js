@@ -63,4 +63,10 @@ export class Enemy {
     this.x += this.velocity.x;
     this.y += this.velocity.y;
   }
+
+  createExplosion(particles) {
+    for (let i = 0; i < 50; i++) {
+      particles.push(new particles(this.x, this.y, this.context));
+    }
+  }
 }
